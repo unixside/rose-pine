@@ -325,4 +325,9 @@ If `VARIANT' is equal to dark return `rose-pine-main-palette' or
       `(mono-modeline-thin-i-color     ,surface)
       `(window-divider-mode t))))
 
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+	       (file-name-as-directory (file-name-directory load-file-name))))
+
 (provide-theme 'rose-pine)
