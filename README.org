@@ -1,0 +1,189 @@
+#+TITLE: Rose Pine Theme for Emacs
+#+AUTHOR: 
+#+DATE: 
+
+* Description
+
+Rose Pine is an Emacs color theme inspired by the [[https://rosepinetheme.com/][Rose Pine]] design philosophy: "All natural pine, faux fur and a bit of soho vibes for the classy minimalist."
+
+This theme provides three beautiful variants:
+- *Main* - The default dark variant with deep, muted tones
+- *Moon* - An alternative dark variant with slightly different hues
+- *Dawn* - A light variant with warm, pastel colors
+
+The theme supports a wide range of Emacs packages and modes including:
+- Font Lock (syntax highlighting)
+- Org Mode and Org Agenda
+- Rainbow Delimiters
+- Dired (with diredfl)
+- VTerm
+- Multiple Cursors
+- And more!
+
+* Installation
+
+** Using straight.el with use-package
+
+If you're using [[https://github.com/radian-software/straight.el][straight.el]] with [[https://github.com/jwiegley/use-package][use-package]], add the following to your Emacs configuration:
+
+#+begin_src emacs-lisp
+(use-package rose-pine-theme
+  :straight (:host github :repo "your-username/rose-pine")
+  :config
+  (load-theme 'rose-pine t))
+#+end_src
+
+Replace ~your-username/rose-pine~ with the actual GitHub repository path.
+
+** Using straight.el without use-package
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(rose-pine-theme :type git :host github :repo "your-username/rose-pine"))
+(load-theme 'rose-pine t)
+#+end_src
+
+** Manual Installation
+
+1. Clone this repository:
+   #+begin_src shell
+   git clone https://github.com/your-username/rose-pine ~/.emacs.d/themes/rose-pine
+   #+end_src
+
+2. Add to your Emacs configuration:
+   #+begin_src emacs-lisp
+   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/rose-pine")
+   (load-theme 'rose-pine t)
+   #+end_src
+
+* Configuration
+
+** Basic Configuration
+
+To load the theme with default settings:
+
+#+begin_src emacs-lisp
+(load-theme 'rose-pine t)
+#+end_src
+
+** Choosing a Variant
+
+The theme supports toggling between dark and light variants, as well as choosing specific dark variants (Main or Moon).
+
+*** Setting the Default Variant
+
+To start with a specific variant, set ~rose-pine-variant~ before loading the theme:
+
+#+begin_src emacs-lisp
+;; Use the light variant (Dawn) by default
+(setq rose-pine-variant 'light)
+(load-theme 'rose-pine t)
+
+;; Use the dark variant (Main or Moon) by default
+(setq rose-pine-variant 'dark)
+(load-theme 'rose-pine t)
+#+end_src
+
+*** Choosing Between Main and Moon (Dark Variants)
+
+By default, the dark variant uses "Main". To use "Moon" instead:
+
+#+begin_src emacs-lisp
+(setq rose-pine-dark 'moon)
+(setq rose-pine-variant 'dark)
+(load-theme 'rose-pine t)
+#+end_src
+
+*** Example: Complete Configuration with use-package
+
+#+begin_src emacs-lisp
+(use-package rose-pine-theme
+  :straight (:host github :repo "your-username/rose-pine")
+  :custom
+  (rose-pine-variant 'dark)      ; Start with dark variant
+  (rose-pine-dark 'main)         ; Use 'main' or 'moon'
+  (rose-pine-light 'dawn)        ; Use 'dawn' (currently the only light option)
+  :config
+  (load-theme 'rose-pine t))
+#+end_src
+
+** Interactive Commands
+
+*** Toggle Between Dark and Light
+
+You can toggle between dark and light variants interactively:
+
+#+begin_src emacs-lisp
+M-x rose-pine-theme-toggle
+#+end_src
+
+Or bind it to a key:
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c t") #'rose-pine-theme-toggle)
+#+end_src
+
+*** Reload the Theme
+
+If you change the variant settings, reload the theme to apply changes:
+
+#+begin_src emacs-lisp
+M-x rose-pine-theme-reload
+#+end_src
+
+** Accessing Colors Programmatically
+
+You can access theme colors in your own configuration:
+
+#+begin_src emacs-lisp
+;; Get a color from the current variant
+(rose-pine-theme-color :red)
+(rose-pine-theme-color :blue)
+
+;; Get a color from a specific variant
+(rose-pine-theme-color :magenta 'dark)
+(rose-pine-theme-color :cyan 'light)
+#+end_src
+
+Available color names: ~:base~, ~:surface~, ~:overlay~, ~:muted~, ~:subtle~, ~:text~, ~:red~, ~:yellow~, ~:cyan~, ~:green~, ~:blue~, ~:magenta~, ~:hl-low~, ~:hl-med~, ~:hl-high~
+
+** Using with ~rose-pine-with-colors~ Macro
+
+For more complex configurations, you can use the ~rose-pine-with-colors~ macro:
+
+#+begin_src emacs-lisp
+(rose-pine-with-colors 'dark
+  ;; All color variables are now bound: base, surface, text, red, etc.
+  (set-face-attribute 'my-custom-face nil :foreground text :background base))
+#+end_src
+
+* Customization Groups
+
+The theme uses the ~rose-pine-themes~ customization group. You can customize all theme options via:
+
+#+begin_src emacs-lisp
+M-x customize-group RET rose-pine-themes RET
+#+end_src
+
+* Screenshots
+
+** Main (Dark)
+The default dark variant with deep purples and muted tones.
+
+** Moon (Dark)
+An alternative dark variant with slightly different color balance.
+
+** Dawn (Light)
+A warm, light variant perfect for daytime coding.
+
+* Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+* License
+
+[Add your license information here]
+
+* Acknowledgments
+
+Inspired by the [[https://rosepinetheme.com/][Rose Pine]] color scheme.
