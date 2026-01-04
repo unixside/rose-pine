@@ -28,7 +28,7 @@ If you're using [[https://github.com/radian-software/straight.el][straight.el]] 
 
 #+begin_src emacs-lisp
 (use-package rose-pine-theme
-  :straight (:host github :repo "your-username/rose-pine")
+  :straight (:host github :repo "unixside/rose-pine")
   :config
   (load-theme 'rose-pine t))
 #+end_src
@@ -39,7 +39,7 @@ Replace ~your-username/rose-pine~ with the actual GitHub repository path.
 
 #+begin_src emacs-lisp
 (straight-use-package
- '(rose-pine-theme :type git :host github :repo "your-username/rose-pine"))
+ '(rose-pine-theme :type git :host github :repo "unixside/rose-pine"))
 (load-theme 'rose-pine t)
 #+end_src
 
@@ -98,7 +98,7 @@ By default, the dark variant uses "Main". To use "Moon" instead:
 
 #+begin_src emacs-lisp
 (use-package rose-pine-theme
-  :straight (:host github :repo "your-username/rose-pine")
+  :straight (:host github :repo "unixside/rose-pine")
   :custom
   (rose-pine-variant 'dark)      ; Start with dark variant
   (rose-pine-dark 'main)         ; Use 'main' or 'moon'
