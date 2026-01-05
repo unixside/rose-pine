@@ -136,7 +136,7 @@
             (hl-high (color 'hl-high)))
         `((default                          ((,class (:foreground ,text :background ,base))))
           (cursor                           ((,class (:background ,magenta))))
-          (hl-line                          ((,class (:inherit t :background ,hl-low))))
+          (hl-line                          ((,class (:background ,hl-low))))
           (fringe                           ((,class (:background ,base))))
           (highlight                        ((,class (:background ,hl-low))))
           (error                            ((,class (:foreground ,red))))
@@ -170,22 +170,27 @@
           (header-line                      ((,class (:foreground ,text :background ,overlay))))
           
           ;; My own header-line mode
-          (mono-modeline-name-face          ((,class (:inherit (bold italic) :foreground ,text :background ,overlay))))
+	  (mono-modeline-icon-RW-face       ((,class (:foreground ,text :background ,overlay))))
+	  (mono-modeline-icon-**-face       ((,class (:foreground ,red :background ,overlay))))
+	  (mono-modeline-icon-RO-face       ((,class (:foreground ,blue :background ,overlay))))
+	  (mono-modeline-icon-i-face        ((,class (:foreground ,muted :background ,overlay))))
+          (mono-modeline-name-face          ((,class (:weight bold :slant italic :foreground ,text :background ,overlay))))
           (mono-modeline-name-i-face        ((,class (:foreground ,muted :background ,overlay))))
           (mono-modeline-primary-face       ((,class (:foreground ,subtle :background ,overlay))))
-          (mono-modeline-secondary-face     ((,class (:inherit (bold italic) :foreground ,muted :background ,overlay))))
-          (mono-modeline-text-i-face        ((,class (:foreground ,muted :background ,overlay))))
+          (mono-modeline-primary-i-face     ((,class (:foreground ,subtle :background ,overlay))))
+          (mono-modeline-secondary-face     ((,class (:weight bold :slant italic :foreground ,muted :background ,overlay))))
+          (mono-modeline-secondary-i-face   ((,class (:weight bold :slant italic :foreground ,muted :background ,overlay))))
 
           ;; Optional appearance for mode-line
           (mono-modeline-thin-face          ((,class (:foreground ,text :background ,text))))
           (mono-modeline-thin-i-face        ((,class (:foreground ,overlay :background ,overlay))))
 
           ;; PGNA Mode
-          (pgna-mode-blunder-face           ((,class (:inherit (bold italic):foreground ,red))))
-          (pgna-mode-mistake-face           ((,class (:inherit (bold italic):foreground ,cyan))))
-          (pgna-mode-inaccurancy-face       ((,class (:inherit (bold italic):foreground ,yellow))))
-          (pgna-mode-excellent-face         ((,class (:inherit (bold italic):foreground ,magenta))))
-          (pgna-mode-brilliant-face         ((,class (:inherit (bold italic):foreground ,blue))))
+          (pgna-mode-blunder-face           ((,class (:weight bold :slant italic :foreground ,red))))
+          (pgna-mode-mistake-face           ((,class (:weight bold :slant italic :foreground ,cyan))))
+          (pgna-mode-inaccurancy-face       ((,class (:weight bold :slant italic :foreground ,yellow))))
+          (pgna-mode-excellent-face         ((,class (:weight bold :slant italic :foreground ,magenta))))
+          (pgna-mode-brilliant-face         ((,class (:weight bold :slant italic :foreground ,blue))))
           
           ;; Font locks
           (font-lock-warning-face           ((,class (:foreground ,red))))
@@ -260,9 +265,9 @@
           (diredfl-number      ((,class (:background ,base :foreground ,blue))))
 
           ;; Multiple cursor
-          (mc/cursor-face           ((,class (:inherit cursor))))
-          (mc/cursor-bar-face       ((,class (:inherit cursor))))
-          (mc/region-face           ((,class (:inherit cursor))))
+          (mc/cursor-face           ((,class (:background ,magenta))))
+          (mc/cursor-bar-face       ((,class (:background ,magenta))))
+          (mc/region-face           ((,class (:background ,magenta))))
           
           ;; Org Mode Faces
           (variable-pitch ((,class (:foreground ,text))))
@@ -278,19 +283,19 @@
           (org-level-1 ((,class (:foreground ,red))))
           
           (org-document-title            ((,class (:foreground ,text))))
-          (org-block                     ((,class (:inherit fixed-pitch :background ,hl-low))))
-          (org-code                      ((,class (:inherit default :foreground ,blue))))
+          (org-block                     ((,class (:background ,hl-low))))
+          (org-code                      ((,class (:foreground ,blue :background ,base))))
           (org-document-info             ((,class (:foreground ,muted ))))
-          (org-document-info-keyword     ((,class (:inherit (shadow fixed-pitch)))))
-          (org-indent                    ((,class (:inherit (org-hide fixed-pitch)))))
+          (org-document-info-keyword     ((,class (:foreground ,muted))))
+          (org-indent                    ((,class (:foreground ,base))))
           (org-link                      ((,class (:foreground ,magenta))))
-          (org-meta-line                 ((,class (:inherit (font-lock-comment-face fixed-pitch)))))
-          (org-property-value            ((,class (:inherit fixed-pitch))) t)
-          (org-special-keyword           ((,class (:inherit (font-lock-comment-face fixed-pitch)))))
-          (org-table                     ((,class (:inherit fixed-pitch :foreground ,subtle)))) 
-          (org-verbatim                  ((,class (:inherit (shadow fixed-pitch) :foreground ,subtle))))
-          (org-drawer                    ((,class (:inherit fixed-pitch :foreground ,muted))))
-          (org-hide                      ((,class (:inherit fixed-pitch :foreground ,base))))
+          (org-meta-line                 ((,class (:foreground ,muted))))
+          (org-property-value            ((,class ())) t)
+          (org-special-keyword           ((,class (:foreground ,muted))))
+          (org-table                     ((,class (:foreground ,subtle)))) 
+          (org-verbatim                  ((,class (:foreground ,subtle))))
+          (org-drawer                    ((,class (:foreground ,muted))))
+          (org-hide                      ((,class (:foreground ,base))))
           (org-tag                       ((,class (:foreground ,muted))))
           (org-todo                      ((,class (:foreground ,red))))
           (org-done                      ((,class (:foreground ,muted))))
