@@ -5,13 +5,13 @@
   (modus-themes-generate-palette
    '(
      ;; Base colors
-     (bg-main          "#24283b")
-     (fg-main          "#c0caf5")
-     (fg-dim           "#9aa5ce")
-     (fg-alt           "#565f89")
-     (bg-active        "#2f3545")
-     (bg-inactive      "#1d202f")
-     (border           "#363c4e")
+      (bg-main          "#24283b")
+      (fg-main          "#c0caf5")
+      (fg-dim           "#a9b1d6")
+      (fg-alt           "#3b4261")
+      (bg-active        "#292e42")
+      (bg-inactive      "#1f2335")
+      (border           "#1d202f")
 
      ;; Accent foregrounds - TokyoNight Storm colors
      (red              "#f7768e")
@@ -50,7 +50,7 @@
      (cyan-faint       "#5aa8c8")
      (cyan-intense     "#90e0ff")
 
-     (comment          "#5f6996")
+      (comment          "#565f89")
 
      ;; Accent backgrounds
      (bg-red-subtle      "#3b1f2a")
@@ -84,27 +84,27 @@
      (bg-cyan-intense     "#303840")
 
      ;; Special purpose backgrounds
-     (bg-dim           "#2f3545")
-     (bg-completion    "#363c50")
-     (bg-popup         "#1d202f")
-     (bg-hover         "#323850")
-     (bg-hover-secondary "#353a40")
-     (bg-hl-line       "#2f3545")
-     (bg-region        "#2e3c64")
+      (bg-dim           "#292e42")
+      (bg-completion    "#2a2f44")
+      (bg-popup         "#1f2335")
+      (bg-hover         "#24283b")
+      (bg-hover-secondary "#353a40")
+      (bg-hl-line       "#292e42")
+      (bg-region        "#2e3c64")
 
-     (bg-mode-line-active    "#363c4e")
-     (border-mode-line-active "#545c7e")
-     (bg-mode-line-inactive  "#1d202f")
-     (fg-mode-line-inactive  "#565f89")
-     (border-mode-line-inactive "#363c4e")
+      (bg-mode-line-active    "#292e42")
+      (border-mode-line-active "#545c7e")
+      (bg-mode-line-inactive  "#1f2335")
+      (fg-mode-line-inactive  "#565f89")
+      (border-mode-line-inactive "#292e42")
 
      (modeline-err     "#f7768e")
      (modeline-warning "#e0af68")
      (modeline-info    "#9ece6a")
 
-     (bg-tab-bar      "#24283b")
-     (bg-tab-current  "#24283b")
-     (bg-tab-other     "#2f3545")
+      (bg-tab-bar      "#24283b")
+      (bg-tab-current  "#24283b")
+      (bg-tab-other     "#292e42")
 
      ;; Diffs
      (bg-added           "#1f3025")
@@ -190,12 +190,12 @@
      (variable       fg-main)
      (variable-use   fg-main)
 
-     (bracket        cyan)
-     (delimiter      cyan)
-     (docmarkup      comment)
-     (number         yellow)
-     (operator       cyan)
-     (punctuation    cyan)
+      (bracket        fg-dim)
+      (delimiter      cyan)
+      (docmarkup      comment)
+      (number         yellow)
+      (operator       cyan)
+      (punctuation    cyan)
 
      (fg-link           green)
      (underline-link    green)

@@ -10,8 +10,8 @@
      (fg-dim           "#828bb8")
      (fg-alt           "#7a88cf")
      (bg-active        "#2f334d")
-     (bg-inactive      "#1b1d2b")
-     (border           "#363a54")
+      (bg-inactive      "#1e2030")
+      (border           "#1b1d2b")
 
      ;; Accent foregrounds - TokyoNight Moon colors
      (red              "#ff757f")
@@ -190,12 +190,12 @@
      (variable       fg-main)
      (variable-use   fg-main)
 
-     (bracket        cyan)
-     (delimiter      cyan)
-     (docmarkup      comment)
-     (number         yellow)
-     (operator       cyan)
-     (punctuation    cyan)
+      (bracket        fg-dim)
+      (delimiter      cyan)
+      (docmarkup      comment)
+      (number         yellow)
+      (operator       cyan)
+      (punctuation    cyan)
 
      (fg-link           green)
      (underline-link    green)
